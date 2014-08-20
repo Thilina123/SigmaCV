@@ -7,17 +7,24 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library" exported="">
+    <orderEntry type="library" name="pdfbox-app-1.8.6" level="application" />
+    <orderEntry type="library" name="jsoup-1.7.3" level="project" />
+    <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://F:/Academic/Google Drive/Semester 7/Project/JSOUP html extracter/jsoup-1.7.3.jar!/" />
+          <root url="jar://$MODULE_DIR$/../stanford-ner-2014-06-16/stanford-ner-2014-06-16/stanford-ner.jar!/" />
         </CLASSES>
-        <JAVADOC>
-          <root url="jar://F:/Academic/Google Drive/Semester 7/Project/JSOUP html extracter/jsoup-1.7.3-javadoc.jar!/" />
-        </JAVADOC>
-        <SOURCES>
-          <root url="jar://F:/Academic/Google Drive/Semester 7/Project/JSOUP html extracter/jsoup-1.7.3-sources.jar!/" />
-        </SOURCES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/Lib/itext-2.1.7.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
       </library>
     </orderEntry>
   </component>
