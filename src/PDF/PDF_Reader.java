@@ -21,7 +21,7 @@ public class PDF_Reader {
             pd = PDDocument.load(input);
             System.out.println(pd.getNumberOfPages());
             System.out.println(pd.isEncrypted());
-            pd.save("CopyOfInvoice.pdf"); // Creates a copy called "CopyOfInvoice.pdf"
+//            pd.save("CopyOfInvoice.pdf"); // Creates a copy called "CopyOfInvoice.pdf"
             PDFTextStripper stripper = new PDFTextStripper();
             stripper.setStartPage(3); //Start extracting from page 3
             stripper.setEndPage(5); //Extract till page 5

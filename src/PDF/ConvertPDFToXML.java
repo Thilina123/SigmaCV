@@ -19,12 +19,12 @@ public class ConvertPDFToXML {
     static TransformerHandler handler;
     static AttributesImpl atts;
 
-    public static void main(String[] args) throws IOException {
+    public void Convert(String src, String dest){               // file extensions should be included
 
         try {
             Document document = new Document();
             document.open();
-            PdfReader reader = new PdfReader("C:\\hello.pdf");
+            PdfReader reader = new PdfReader(src);
             PdfDictionary page = reader.getPageN(1);
             PRIndirectReference objectReference = (PRIndirectReference) page
                     .get(PdfName.CONTENTS);
@@ -40,7 +40,7 @@ public class ConvertPDFToXML {
                 }
             }
             String test = strbufe.toString();
-            streamResult = new StreamResult("data.xml");
+            streamResult = new StreamResult(dest);
             initXML();
             process(test);
             closeXML();
@@ -67,7 +67,7 @@ public class ConvertPDFToXML {
         handler.startElement("", "", "data", atts);
     }
 
-    public static void process(String s) throws SAXException {
+    public void process(String s) throws SAXException {
         String[] elements = s.split("\\|");
         atts.clear();
         handler.startElement("", "", "Message", atts);
@@ -75,8 +75,11 @@ public class ConvertPDFToXML {
         handler.endElement("", "", "Message");
     }
 
-    public static void closeXML() throws SAXException {
+    public void closeXML() throws SAXException {
         handler.endElement("", "", "data");
         handler.endDocument();
+    }
+    public static void main(String[] args) throws IOException {
+        new ConvertPDFToXML().Convert("Res/Dilshan CV.pdf","Res/CV.xml");
     }
 }
