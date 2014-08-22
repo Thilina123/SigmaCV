@@ -5,6 +5,7 @@
       <root url="jar://$PROJECT_DIR$/Lib/jsoup-1.7.3.jar!/" />
       <root url="jar://$PROJECT_DIR$/Lib/pdfbox-app-1.8.6.jar!/" />
       <root url="jar://$PROJECT_DIR$/Lib/stanford-ner.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Lib/org.json-20120521.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

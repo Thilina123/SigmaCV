@@ -34,8 +34,8 @@ public class Main {
         ner.ExtractNames();
         //============== extracting linkedIn profile info
 
-//        Google g=new Google();
-//        LinkedInExtractor linkedIn=new LinkedInExtractor();
+//        ProfileMaker.Google g=new ProfileMaker.Google();
+//        ProfileMaker.LinkedInExtractor linkedIn=new ProfileMaker.LinkedInExtractor();
 //        String link=g.FindOnLinkedIn("malaka walpola");             // insert name here
 //        System.out.println(link);
 //        linkedIn.Extract(link);
