@@ -14,17 +14,22 @@ public class GitHubExtractor {
     }
 
     public static void  main(String[] args) {
-        new GitHubExtractor("69e07dde89a8a0a6713f810cfd4c461f04f47e85").GetInfo("https://api.github.com/users/wadsashika");
-//        new GitHubExtractor("69e07dde89a8a0a6713f810cfd4c461f04f47e85").Find("thilina premasiri");
+//        new GitHubExtractor("69e07dde89a8a0a6713f810cfd4c461f04f47e85").GetInfo("https://api.github.com/users/wadsashika");
+        new GitHubExtractor("69e07dde89a8a0a6713f810cfd4c461f04f47e85").Find("thilina premasiri");
     }
     public void Find(String name){
+        System.out.println("\nSearching "+name+" on GitHub");
+        name=name.replaceAll(" ","%20");
         String url="https://api.github.com/search/users?q="+name+"&order=desc&access_token="+token;
         String result=networkManager.Get(url);
-        System.out.println(result);
+//        System.out.println(result);
         try {
             JSONObject json=new JSONObject(result);
-            if (json.getInt("total_count")==0) {
+            if (json.getInt("total_count")!=0) {
                 GetInfo(json.getJSONArray("items").getJSONObject(0).getString("url"));
+            }
+            else {
+                System.out.println("No GitHub profiles found");
             }
         } catch (JSONException e) {
             e.printStackTrace();
