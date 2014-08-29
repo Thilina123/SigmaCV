@@ -11,6 +11,7 @@ import java.net.*;
 public class NetworkManager {
     public static void  main(String[] args) {
         new NetworkManager().Testing("https://api.github.com/search/users?q=thilina%20premasiri");
+//        new NetworkManager().Testing("https://www.google.lk/search?q=thilina+premasiri+linkedin");
     }
     public String Get(String urlString){
 
@@ -22,10 +23,12 @@ public class NetworkManager {
             System.out.println("request-----" + urlString);
             Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(
                     "cache.mrt.ac.lk", 3128));
-//            HttpURLConnection uc = (HttpURLConnection) url.openConnection(proxy);
-            HttpURLConnection uc = (HttpURLConnection) url.openConnection(); /*With out proxy */
-            uc.setConnectTimeout(5000);
-            uc.setReadTimeout(5000);
+            HttpURLConnection uc = (HttpURLConnection) url.openConnection(proxy);
+//            HttpURLConnection uc = (HttpURLConnection) url.openConnection(); /*With out proxy */
+            uc.setConnectTimeout(0);
+            uc.setReadTimeout(0);
+            uc.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-GB;     rv:1.9.2.13) Gecko/20101203 Firefox/3.6.13 (.NET CLR 3.5.30729)");
+//            uc.setRequestProperty("User-Agent","Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.143 Safari/537.36s");
             uc.connect();
             String line = null;
             StringBuffer tmp = new StringBuffer();

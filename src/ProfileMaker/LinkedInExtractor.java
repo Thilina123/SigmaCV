@@ -9,7 +9,11 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 
 public class LinkedInExtractor {
-    public void Extract(String link) {
+    public void Extract(String searchName) {
+
+        ProfileMaker.Google g=new ProfileMaker.Google();
+        String link=g.FindOnLinkedIn(searchName);
+
         Document doc = null;
         String picUrl,name,title;
         String[] publications;
