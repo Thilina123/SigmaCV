@@ -23,8 +23,8 @@ public class NetworkManager {
             System.out.println("request-----" + urlString);
             Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(
                     "cache.mrt.ac.lk", 3128));
-            HttpURLConnection uc = (HttpURLConnection) url.openConnection(proxy);
-//            HttpURLConnection uc = (HttpURLConnection) url.openConnection(); /*With out proxy */
+//            HttpURLConnection uc = (HttpURLConnection) url.openConnection(proxy);
+            HttpURLConnection uc = (HttpURLConnection) url.openConnection(); /*With out proxy */
             uc.setConnectTimeout(0);
             uc.setReadTimeout(0);
             uc.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-GB;     rv:1.9.2.13) Gecko/20101203 Firefox/3.6.13 (.NET CLR 3.5.30729)");
