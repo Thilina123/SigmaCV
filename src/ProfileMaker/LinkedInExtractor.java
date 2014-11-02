@@ -26,9 +26,9 @@ public class LinkedInExtractor {
             profile.setName("not found");
             return profile;
         }
-        Document doc = null;
         String picUrl, name, title;
         String[] publications;
+        Document doc = null;
         try {
             doc = Jsoup.connect(link).timeout(0).get();
         } catch (IOException e) {
@@ -71,7 +71,7 @@ public class LinkedInExtractor {
 
 //        publications
         Publication pb;
-        Elements pub = doc != null ? doc.select("div[class=editable-item section-item] > div > hgroup > h4 ") : null;
+        Elements pub = doc != null ? doc.select("div[class=background-publications] > div[class=editable-item section-item] > div > hgroup > h4 ") : null;
         Elements pubSummary = doc != null ? doc.select("div[class=editable-item section-item] > div > p") : null;
         publications = new String[pub.size()];
         for (int i = 0; i < pub.size(); i++) {

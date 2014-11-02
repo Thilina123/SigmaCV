@@ -70,7 +70,7 @@ public class NERDemo {
       }
 
     } else {
-      String[] example = {"Good afternoon Mr. Thilina Premasiri, how are you today?", "I am Running Train. I born in 1990/10/24",
+      String[] example = {"Good afternoon Mr. Thilina Premasiri, how are you today?", "I am Running studying image processing. I born in 1990/10/24",
                           "Malaka J. Walpola\n" +
                                   "Senior Lecturer at University of Moratuwa\n" +
                                   "Sri Lanka Higher Education\n" +
